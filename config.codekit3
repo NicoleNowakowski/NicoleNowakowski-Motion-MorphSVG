@@ -48,12 +48,12 @@
       "sC" : 3,
       "tS" : 0
     },
-    "\/dev\/content\/project.kit" : {
+    "\/dev\/content\/preloader.kit" : {
       "cB" : 0,
       "ft" : 2048,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/dev\/content\/project.html",
+      "oAP" : "\/dev\/content\/preloader.html",
       "oF" : 0
     },
     "\/dev\/global\/head.kit" : {
@@ -231,7 +231,7 @@
       "pg" : 0,
       "sct" : 0
     },
-    "\/dev\/scss\/sections\/_project.scss" : {
+    "\/dev\/scss\/sections\/_preloader.scss" : {
       "aP" : 0,
       "bl" : 0,
       "dP" : 10,
@@ -239,7 +239,7 @@
       "ft" : 4,
       "ma" : 0,
       "oA" : 1,
-      "oAP" : "\/dev\/scss\/sections\/_project.css",
+      "oAP" : "\/dev\/scss\/sections\/_preloader.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
