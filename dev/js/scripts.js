@@ -14,6 +14,7 @@ function setStage(){
 
     tl.set("#coffeebottom",{y:"+=200", alpha:1})
     .set("#coffeetop",{y:"+=200", alpha:1})
+    .set("#number",{y:"+=95", alpha:1})
     ;
 
 return tl;
@@ -26,8 +27,8 @@ function showCoffee(){
 
     tl.to("#coffeebottom",{duration:5, y:"-=200", alpha:1}, "coffee")
         .to("#coffeetop",{duration:5, y:"-=200", alpha:1}, "coffee")
-        .to(PERC,{duration:5, num:"+=100", roundProps:"num", onUpdate:percentHandler, ease:"expo.out"}, "coffee")
-
+        .to(PERC,{delay:0.5, duration:5, num:"+=100", roundProps:"num", onUpdate:percentHandler, ease:"expo.out"}, "coffee")
+        .to("#number",{duration:5, y:"-=140", delay:0.5, alpha:1}, "coffee")
 
     
     ;
