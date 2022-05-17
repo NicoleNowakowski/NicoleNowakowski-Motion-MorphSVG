@@ -37,11 +37,11 @@ return tl;
 }
 
 //function countUpNumbers(){
-  //  let tl = gsap.timeline();
+ //  let tl = gsap.timeline();
 
- //   tl.to(PERC,{duration:5, num:"+=100", roundProps:"num", onUpdate:percentHandler, ease:"expo.out"}, "coffee");
-
-  //  return tl;
+ //tl.to(PERC,{delay:0.5, duration:5, num:"+=100", roundProps:"num", onUpdate:percentHandler, ease:"expo.out"}, "coffee")
+// .to("#number",{duration:5, y:"-=140", delay:0.5, alpha:1}, "coffee")
+ //  return tl;
 //}
 
 function percentHandler(){
@@ -50,9 +50,11 @@ function percentHandler(){
     PERC_num.textContent = PERC.num;
 }
 
+
+
 mainTL.add(setStage()) 
 .add(showCoffee())
-//.add(countUpNumbers())
+
 
 ;
 
