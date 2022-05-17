@@ -5,11 +5,15 @@ gsap.registerPlugin(GSDevTools);
 
 const mainTL = gsap.timeline();
 
+let PERC = {num:0};
+let PERC_num = document.querySelector("#percentage tspan");
+
+
 function setStage(){
     let tl= gsap.timeline();
 
-    tl.set("#coffeebottom",{y:"-=1075", alpha:0})
-  
+    tl.set("#coffeebottom",{y:"+=200", alpha:1})
+    .set("#coffeetop",{y:"+=200", alpha:1})
     ;
 
 return tl;
@@ -20,18 +24,34 @@ return tl;
 function showCoffee(){
     let tl= gsap.timeline();
 
-    tl.to("#coffeebottom",{duration:1, y:"+=1075", alpha:1, ease:"back.out"})
+    tl.to("#coffeebottom",{duration:5, y:"-=200", alpha:1}, "coffee")
+        .to("#coffeetop",{duration:5, y:"-=200", alpha:1}, "coffee")
+        .to(PERC,{duration:5, num:"+=100", roundProps:"num", onUpdate:percentHandler, ease:"expo.out"}, "coffee")
 
+
+    
     ;
 
 return tl;
+}
 
+//function countUpNumbers(){
+  //  let tl = gsap.timeline();
 
+ //   tl.to(PERC,{duration:5, num:"+=100", roundProps:"num", onUpdate:percentHandler, ease:"expo.out"}, "coffee");
+
+  //  return tl;
+//}
+
+function percentHandler(){
+
+    //console.log("percentHandler ran");
+    PERC_num.textContent = PERC.num;
 }
 
 mainTL.add(setStage()) 
 .add(showCoffee())
-
+//.add(countUpNumbers())
 
 ;
 
