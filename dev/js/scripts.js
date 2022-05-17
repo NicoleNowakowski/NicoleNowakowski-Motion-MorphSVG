@@ -1,11 +1,40 @@
 import { gsap } from "gsap";
 import { GSDevTools } from "gsap/GSDevTools";
-import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
-import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
+
+gsap.registerPlugin(GSDevTools);
+
+const mainTL = gsap.timeline();
+
+function setStage(){
+    let tl= gsap.timeline();
+
+    tl.set("#coffee",{x:"-=1075", alpha:0})
+  
+    ;
+
+return tl;
 
 
-gsap.registerPlugin(GSDevTools, DrawSVGPlugin, MorphSVGPlugin)
+}
 
-const mainTL = gsap.timeline({id:"mainTL"});
+function showCoffee(){
+    let tl= gsap.timeline();
 
-mainTL
+    tl.to("#coffee",{duration:1, x:"+=1075", alpha:1, ease:"back.out"})
+
+    ;
+
+return tl;
+
+
+}
+
+mainTL.add(setStage()) 
+.add(showCoffee())
+
+
+;
+
+
+
+GSDevTools.create();
