@@ -23,25 +23,23 @@ return tl;
 }
 
 function showCoffee(){
-    let tl= gsap.timeline();
+    let tl= gsap.timeline({onStart:moveSteam});
 
     tl.to("#coffeebottom",{duration:5, y:"-=200", alpha:1}, "coffee")
         .to("#coffeetop",{duration:5, y:"-=200", alpha:1}, "coffee")
         .to(PERC,{delay:0.5, duration:5, num:"+=100", roundProps:"num", onUpdate:percentHandler, ease:"expo.out"}, "coffee")
         .to("#number",{duration:5, y:"-=140", delay:0.5, alpha:1}, "coffee")
-
-    
     ;
 
 return tl;
 }
 
-//function countUpNumbers(){
- //  let tl = gsap.timeline();
 
- //tl.to(PERC,{delay:0.5, duration:5, num:"+=100", roundProps:"num", onUpdate:percentHandler, ease:"expo.out"}, "coffee")
-// .to("#number",{duration:5, y:"-=140", delay:0.5, alpha:1}, "coffee")
- //  return tl;
+//function countUpNumbers(){
+
+ //gsap.to(PERC,{delay:0.5, duration:5, num:"+=100", roundProps:"num", onUpdate:percentHandler, ease:"expo.out"}, "coffee")
+//.to("#number",{duration:5, y:"-=140", delay:0.5, alpha:1}, "coffee")
+ 
 //}
 
 function percentHandler(){
@@ -50,11 +48,14 @@ function percentHandler(){
     PERC_num.textContent = PERC.num;
 }
 
+function moveSteam(){
+gsap.to(".heart",{duration:2.5,y:"-=30", stagger:0.5, ease:"back.inOut", repeat:-1, yoyo:true, alpha:1})
 
+}
 
 mainTL.add(setStage()) 
 .add(showCoffee())
-
+//.add(moveSteam())
 
 ;
 
