@@ -42,7 +42,7 @@ function percentHandler(){
 }
 
 function moveSteam(){
-gsap.to(".heart",{duration:2.5,y:"-=15", stagger:0.5, ease:"back.inOut", repeat:-1, yoyo:true, alpha:1})
+gsap.fromTo(".heart",{alpha:0}, {duration:2,y:"-=15", stagger:0.5, ease:"back.inOut", repeat:-1, yoyo:true, alpha:1})
 
 }
 
