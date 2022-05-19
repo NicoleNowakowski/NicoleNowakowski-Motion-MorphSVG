@@ -12,9 +12,10 @@ let PERC_num = document.querySelector("#percentage tspan");
 function setStage(){
     let tl= gsap.timeline();
 
-    tl.set("#coffeebottom",{y:"+=200", alpha:1})
-    .set("#coffeetop",{y:"+=200", alpha:1})
+    tl.set("#coffeebottom",{y:"+=155", alpha:1})
+    .set("#coffeetop",{y:"+=155", alpha:1})
     .set("#number",{y:"+=95", alpha:1})
+   
     ;
 
 return tl;
@@ -25,10 +26,10 @@ return tl;
 function showCoffee(){
     let tl= gsap.timeline({onStart:moveSteam});
 
-    tl.to("#coffeebottom",{duration:5, y:"-=200", alpha:1}, "coffee")
-        .to("#coffeetop",{duration:5, y:"-=200", alpha:1}, "coffee")
-        .to(PERC,{delay:0.5, duration:5, num:"+=100", roundProps:"num", onUpdate:percentHandler, ease:"expo.out"}, "coffee")
-        .to("#number",{duration:5, y:"-=140", delay:0.5, alpha:1}, "coffee")
+    tl.to("#coffeebottom",{duration:5, y:"-=155", alpha:1, ease: "sine.out", repeat:-1 }, "coffee")
+        .to("#coffeetop",{duration:5, y:"-=155", alpha:1, ease: "sine.out", repeat:-1}, "coffee")
+        .to(PERC,{ duration:5, num:"+=100", roundProps:"num", onUpdate:percentHandler, ease:"sine.out", repeat:-1 }, "coffee")
+        .to("#number",{ duration:5, y:"-=140", repeat:-1, ease:"sine.out", alpha:1}, "coffee")
     ;
 
 return tl;
@@ -42,17 +43,16 @@ function percentHandler(){
 }
 
 function moveSteam(){
-gsap.fromTo(".heart",{alpha:0}, {duration:2,y:"-=15", stagger:0.5, ease:"back.inOut", repeat:-1, yoyo:true, alpha:1})
+gsap.fromTo(".heart",{alpha:0}, { duration:1.5 ,y:"-=10", stagger:0.5, repeat:-1, ease:"back.inOut", yoyo:true, alpha:1})
 
 }
 
 mainTL.add(setStage()) 
 .add(showCoffee())
-//.add(moveSteam())
 
 ;
 
 
 
 
-GSDevTools.create();
+//GSDevTools.create();
