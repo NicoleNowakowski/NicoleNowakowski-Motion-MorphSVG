@@ -43,8 +43,8 @@ function percentHandler(){
 }
 
 function moveSteam(){
-gsap.fromTo(".heart",{alpha:0, y:"+=50"}, { duration:4 ,y:"-=50", stagger:0.5, repeat:-1, ease:"back.inOut", alpha:1})
-
+    gsap.fromTo(".heart",{alpha:0, y:"+=45"}, {duration:5,y:"-=45", stagger:0.5, ease:"back.inOut",repeat:-1, alpha:1})
+    
 }
 
 mainTL.add(setStage()) 
