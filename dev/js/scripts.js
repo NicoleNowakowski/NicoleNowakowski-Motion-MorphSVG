@@ -26,10 +26,10 @@ return tl;
 function showCoffee(){
     let tl= gsap.timeline({onStart:moveSteam});
 
-    tl.to("#coffeebottom",{duration:5, y:"-=155", alpha:1, ease: "sine.out", repeat:-1 }, "coffee")
-        .to("#coffeetop",{duration:5, y:"-=155", alpha:1, ease: "sine.out", repeat:-1}, "coffee")
-        .to(PERC,{ duration:5, num:"+=100", roundProps:"num", onUpdate:percentHandler, ease:"sine.out", repeat:-1 }, "coffee")
-        .to("#number",{ duration:5, y:"-=140", repeat:-1, ease:"sine.out", alpha:1}, "coffee")
+    tl.to("#coffeebottom",{duration:5, y:"-=155", alpha:1, ease: "sine.out" }, "coffee")
+        .to("#coffeetop",{duration:5, y:"-=155", alpha:1, ease: "sine.out"}, "coffee")
+        .to(PERC,{ duration:5, num:"+=100", roundProps:"num", onUpdate:percentHandler, ease:"sine.out" }, "coffee")
+        .to("#number",{ duration:5, y:"-=140", ease:"sine.out", alpha:1}, "coffee")
     ;
 
 return tl;
@@ -43,7 +43,7 @@ function percentHandler(){
 }
 
 function moveSteam(){
-gsap.fromTo(".heart",{alpha:0}, { duration:1.5 ,y:"-=10", stagger:0.5, repeat:-1, ease:"back.inOut", yoyo:true, alpha:1})
+gsap.fromTo(".heart",{alpha:0, y:"+=50"}, { duration:4 ,y:"-=50", stagger:0.5, repeat:-1, ease:"back.inOut", alpha:1})
 
 }
 
