@@ -1,9 +1,5 @@
-import {
-    gsap
-} from "gsap";
-import {
-    GSDevTools
-} from "gsap/GSDevTools";
+import { gsap } from "gsap";
+import { GSDevTools } from "gsap/GSDevTools";
 
 gsap.registerPlugin(GSDevTools);
 
@@ -101,11 +97,11 @@ function moveSteam() {
                 delay: i * 0.5
             })
             .to(heart, {
-                duration: dur * 0.4,
+                duration: dur * 0.35,
                 autoAlpha: 1,
                 repeat: 1,
                 yoyo: true,
-                repeatDelay: dur * 0.15,
+                repeatDelay: dur * 0.2,
                 ease: "none"
             })
             .to(
@@ -113,25 +109,14 @@ function moveSteam() {
 
                 {
                     duration: dur,
-                    y: "-=45",
+                    y: "-=50",
                     ease: "none",
                     scale: 1
                 },
                 0
             );
     });
-    // gsap.fromTo(
-    //   ".heart",
-    //   { alpha: 0, y: "+=45" },
-    //   {
-    //     duration: 5,
-    //     y: "-=45",
-    //     stagger: 0.5,
-    //     ease: "back.inOut",
-    //     repeat: -1,
-    //     alpha: 1
-    //   }
-    // );
+  
 }
 
 mainTL.add(setStage()).add(showCoffee());
